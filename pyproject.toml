@@ -1,0 +1,35 @@
+[project]
+name = "deal-ai"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "marcusglee11",email = "marcusglee11@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11,<4.0"
+dependencies = [
+    "fastapi (==0.115.9)",
+    "uvicorn[standard] (>=0.34.3,<0.35.0)",
+    "python-dotenv (>=1.1.0,<2.0.0)",
+    "pydantic (>=2.11.5,<3.0.0)",
+    "langchain (>=0.3.25,<0.4.0)",
+    "instructor (>=1.8.3,<2.0.0)",
+    "llama-index (>=0.12.40,<0.13.0)",
+    "chromadb (>=1.0.12,<2.0.0)",
+    "unstructured (>=0.17.2,<0.18.0)",
+    "pandas (>=2.2.3,<3.0.0)",
+    "psycopg2-binary (>=2.9.10,<3.0.0)",
+    "redis (>=6.2.0,<7.0.0)",
+    "streamlit (>=1.45.1,<2.0.0)",
+    "prometheus-client (>=0.22.1,<0.23.0)",
+    "jinja2 (>=3.1.6,<4.0.0)",
+    "google-api-python-client (>=2.170.0,<3.0.0)",
+    "google-auth-httplib2 (>=0.2.0,<0.3.0)",
+    "google-auth-oauthlib (>=1.2.2,<2.0.0)",
+    "sqlalchemy (>=2.0.41,<3.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

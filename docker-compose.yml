@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    env_file: .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - redis
+      - chroma
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    env_file: .env
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: deal
+      POSTGRES_PASSWORD: dealpw
+      POSTGRES_DB: deals
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+
+  chroma:
+    image: chromadb/chroma:latest
+    volumes:
+      - chromadata:/chroma/chroma
+
+volumes:
+  pgdata:
+  chromadata:

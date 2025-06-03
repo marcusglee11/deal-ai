@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "solitaireagent",
+  "private_key_id": "af3b50d86f7ad8cdcdb32e1ea46a8a53131bbfd7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDg4TdxfmgPLY1p\nFuSygFoAxdJ2wh5xIltTH9inYSrhbU6ML2UPMfI05PpZG8wWS9iKGrxj3FScGRV5\nb+O/QJQ8r21X2Z0N79x3MmMjND/YJXsi5ozrXsM0/7eGJEQDof1xC2xbrbm6VrB4\nfL39Ab6GoPmTQ9cPCRKfKJHbbejqT94jWr87wiHiXitUe7ZkoplufHA0+4pTgcMD\nGy59dgdkmXkJmOuNAlAvxDAf790TEqyUjk25Y922zQPIkJB7ktg6FiFr+8CZcKcO\nvOvm+B49JSuit6lsmA/VAlIMMC+siLZ5Ow7W49kesZjfonOkmUFefjpWIe8fQLFV\nfTxT4birAgMBAAECggEAIurVcQnvnmu0SV0EpbLIRtZwl4AMugRbqcyIF3U+80HF\nsH6rcnCO6yeit7NZPR0JwmfkWJ0dhh9e9jwpYMjmO4YBtGJVwJQ950QroIu8XhNz\nyzeBKgrMxK3wESQQa3/7mlHrwVB4RjavsAWuelqK+tyD5BnkirEd8xiZjTjDsZ3q\nmdrIHtJ0HGiZiXdSpJCl2SRNAwGfkOOJ3ltXv3kM6QgYMDTOcGdqaCcnXkQnLrTD\ndna6JFTDGs37x+8iHGrQz1CTUXEu6Q8/lQ+quEU0wJOH8Xhx2M8L30r7owpMqJa+\nmTJ2+qgpHk1nPkM0DdChWHkbRqULSmQsX9XPESk0AQKBgQD0c/APqMMruVSuZlFf\naUy6gBgI1S3n6ulLLZYl+k0Sp9lFT1Yjg6jdoMvfQlQ+FQqb/cPFNUNJC4sbuskY\nS9QGI1dc0fnEVNST8zJl8gBwpdiD1s/Qd4I4JmeW3LSt97ewyGV1ei+Z5QxY1QkY\nvlBs9KL8VWbRoZoDzMwqCXipYwKBgQDrgJbpsodXMfmj7CGVEpk7Q3hf8fNn+wh/\n1jGPFUDLoNnusEYJHOzmF2Iwhy3/7TpTH8rrqMilLtpLU4rW479K/cEd6Mmf1Y/I\nIZkE88MF/77BboMilhGzGEspHzuDpW9uv7NhfB84n1FjK1evzgQFSpmJrpwSoxk5\ngjJOfiB6GQKBgAT7uBEZp6Dkjk1f2JjRVLcYlWTYs67eoxLdQwpTJ+8RbOR00ZS3\nwmGCPaW3fHAnjafQbIVAqLZ8fcF69U6BfTkCz20c+rJ96Dd75bMeU9P4DYnifyoI\nxabPYZ05spU5T41TCH50lzPT74SAE0dl2c3eztPGCeqMGM+rBR52QvdxAoGAHv8z\n3dqjubRYOV0xJl/mT0iYJXjBIuSFv92/dCfF+YdYZ/RHo5dtDvPw9pY0VcUxshMz\nMEVs82DxVozOb25WlVZE/tzO/PytChhx/ZbgCoAY6XjURc8e0UXXTrhPqwoxWpBc\n2e3uZhOCMN1Zk0g4e0HQZ7DV1hYlkc4zNOWg/LECgYEA6JYwA0CgQCZiEAjmLuY2\nq6MHlFy6rs8DCxvaadkRTLToKmFUaCdgvMoJtM7t/CjQ7TP2qwUU+mvhq3i17IGn\nmd5FCXICDc48qQBzUP0kvh/r0IzsKckWPKPXzX1wUoIWh42LVdcpzj0U6ZySukMn\nknGkjA9kKXrPOmF9yvBlrlE=\n-----END PRIVATE KEY-----\n",
+  "client_email": "deal-ai-drive@solitaireagent.iam.gserviceaccount.com",
+  "client_id": "109147948930673473130",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/deal-ai-drive%40solitaireagent.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
