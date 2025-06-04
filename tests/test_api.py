@@ -8,6 +8,7 @@ from fastapi.testclient import TestClient
 
 import googleapiclient.discovery
 import chromadb
+from google.oauth2 import service_account
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(ROOT_DIR)
@@ -40,6 +41,7 @@ def client_stub(*args, **kwargs):
 mp = pytest.MonkeyPatch()
 mp.setattr(googleapiclient.discovery, "build", build_stub)
 mp.setattr(chromadb, "Client", client_stub)
+mp.setattr(service_account.Credentials, "from_service_account_file", lambda *args, **kwargs: MagicMock())
 import db  # module resolved from backend/db.py
 import backend.db as backend_db
 mp.setattr(db, "init_db", lambda: None)
@@ -60,7 +62,7 @@ def test_health(test_client):
 
 
 def test_process_deal(test_client):
-    from backend import main as app_mod
+    from backend import routes as app_routes
     from backend.schemas import ParsedDocument
 
     def mock_list(folder_id: str):
@@ -83,13 +85,11 @@ def test_process_deal(test_client):
             debt_schedule=[],
         )
 
-    mp.setattr(app_mod, "list_drive_files", mock_list)
-    mp.setattr(app_mod, "parse_drive_file", mock_parse)
+    mp.setattr(app_routes, "list_drive_files", mock_list)
+    mp.setattr(app_routes, "parse_drive_file", mock_parse)
 
     resp = test_client.post("/process-deal", json={"folder_id": "F1"})
     assert resp.status_code == 200
     data = resp.json()
-    assert data["folder_id"] == "F1"
-    assert data["num_parsed"] == 2
-    assert data["parsed_files"] == ["doc1.pdf", "sheet.xlsx"]
-    assert data["failed"] == []
+    assert data["deal_id"].startswith("deal_F1_")
+    assert data["num_documents"] == 2

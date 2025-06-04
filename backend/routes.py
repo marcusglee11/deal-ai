@@ -47,13 +47,8 @@ async def process_deal_debug(req: ProcessRequest):
             failed_filenames.append(f"{name}: {e}")
             continue
 
-    return {
-        "folder_id": folder_id,
-        "all_files": [f["name"] for f in files],
-        "parsed_files": parsed_filenames,
-        "failed": failed_filenames,
-        "num_parsed": len(parsed_docs),
-    }
+    response = ProcessResponse(deal_id=deal_id, num_documents=len(parsed_docs))
+    return response
 
 
 @router.post("/chat")
