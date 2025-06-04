@@ -122,6 +122,12 @@ Models are defined in **`backend/schemas.py`** (Pydantic).
 | Chroma `TypeError: Client() got unexpected keyword 'host'` | Use `Client()` default                                                 |
 | 0 documents returned                                       | Ensure `ParsedDocument` supplies all fields; unsupported types skipped |
 
+### 5.2 Running Tests
+
+```bash
+pytest
+```
+
 ---
 
 ## 6 Roadmap / TODO
