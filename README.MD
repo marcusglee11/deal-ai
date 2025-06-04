@@ -92,9 +92,29 @@ Returns:
 {"deal_id":"deal_<id>_<ts>", "num_documents":4}
 ```
 
+## 4 Running Without Docker
+
+For a non‑Docker setup you can install the Python dependencies and run the API
+directly:
+
+```bash
+$ poetry install
+# alternatively:
+# python -m venv .venv && source .venv/bin/activate
+# pip install -r requirements.txt
+$ cp .env.example .env  # add your OPENAI_API_KEY etc.
+$ poetry run uvicorn backend.main:app --reload
+```
+
+Run the tests with:
+
+```bash
+$ poetry run pytest
+```
+
 ---
 
-## 4 API Reference
+## 5 API Reference
 
 | Endpoint            | Method | Body                  | Returns                |
 | ------------------- | ------ | --------------------- | ---------------------- |
@@ -107,14 +127,14 @@ Models are defined in **`backend/schemas.py`** (Pydantic).
 
 ---
 
-## 5 Development Notes
+## 6 Development Notes
 
 * **Python 3.11**, Poetry dependencies installed in Docker with `--no-root`.
 * **Chroma client** auto‑connects (`Client()`); no host/port args.
 * Unsupported file types return empty `ParsedDocument`, preventing crashes.
 * Docker Desktop on Windows – port 8000 sometimes unreachable via `localhost`; use `127.0.0.1`.
 
-### 5.1 Common Issues
+### 6.1 Common Issues
 
 | Symptom                                                    | Fix                                                                    |
 | ---------------------------------------------------------- | ---------------------------------------------------------------------- |
@@ -122,15 +142,15 @@ Models are defined in **`backend/schemas.py`** (Pydantic).
 | Chroma `TypeError: Client() got unexpected keyword 'host'` | Use `Client()` default                                                 |
 | 0 documents returned                                       | Ensure `ParsedDocument` supplies all fields; unsupported types skipped |
 
-### 5.2 Running Tests
+### 6.2 Running Tests
 
 ```bash
-pytest
+poetry run pytest
 ```
 
 ---
 
-## 6 Roadmap / TODO
+## 7 Roadmap / TODO
 
 * [ ] **/chat** RAG endpoint with cited chunks
 * [ ] **/report** lender overview Jinja2 template
@@ -141,7 +161,7 @@ pytest
 
 ---
 
-## 7 License / Authors
+## 8 License / Authors
 
 MIT License © 2025 Deal‑AI contributors.
 
