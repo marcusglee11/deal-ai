@@ -3,7 +3,7 @@ version: "3.9"
 services:
   api:
     build:
-      context: .
+      context: .        # root context ensures .dockerignore is used
       dockerfile: backend/Dockerfile
     env_file: .env
     ports:
@@ -15,7 +15,7 @@ services:
 
   streamlit:
     build:
-      context: .
+      context: .        # share root .dockerignore
       dockerfile: frontend/Dockerfile
     env_file: .env
     ports:
