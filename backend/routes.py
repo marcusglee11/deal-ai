@@ -4,8 +4,20 @@ from typing import List
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
-from .drive import list_drive_files
-from .parsing import parse_drive_file
+from .drive import list_drive_files as _list_drive_files
+from .parsing import parse_drive_file as _parse_drive_file
+
+
+def list_drive_files(folder_id: str):
+    """Wrapper to allow monkeypatching in tests via ``backend.main``."""
+    from . import main
+    return getattr(main, "list_drive_files", _list_drive_files)(folder_id)
+
+
+def parse_drive_file(file_meta: dict):
+    """Wrapper to allow monkeypatching in tests via ``backend.main``."""
+    from . import main
+    return getattr(main, "parse_drive_file", _parse_drive_file)(file_meta)
 from .schemas import ParsedDocument
 
 router = APIRouter()
