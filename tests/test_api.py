@@ -41,7 +41,11 @@ def client_stub(*args, **kwargs):
 mp = pytest.MonkeyPatch()
 mp.setattr(googleapiclient.discovery, "build", build_stub)
 mp.setattr(chromadb, "Client", client_stub)
-mp.setattr(service_account.Credentials, "from_service_account_file", lambda *args, **kwargs: MagicMock())
+mp.setattr(
+    service_account.Credentials,
+    "from_service_account_file",
+    lambda *args, **kwargs: MagicMock(),
+)
 import db  # module resolved from backend/db.py
 import backend.db as backend_db
 mp.setattr(db, "init_db", lambda: None)
