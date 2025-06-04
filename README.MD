@@ -67,7 +67,7 @@ $ docker compose up -d --build
 $ curl http://127.0.0.1:8000/health   # → {"status":"ok"}
 ```
 
-### 3.1 Environment Variables (`.env`)
+### 3.1 Environment Variables (`.env.example`)
 
 ```
 OPENAI_API_KEY=sk-...
