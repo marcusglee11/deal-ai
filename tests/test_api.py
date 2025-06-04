@@ -97,3 +97,16 @@ def test_process_deal(test_client):
     data = resp.json()
     assert data["deal_id"].startswith("deal_F1_")
     assert data["num_documents"] == 2
+
+
+def test_chat_placeholder(test_client):
+    resp = test_client.post("/chat")
+    assert resp.status_code == 200
+    assert resp.json() == {"reply": "This is still a placeholder chat response."}
+
+
+def test_report_placeholder(test_client):
+    deal_id = "D123"
+    resp = test_client.get(f"/report/{deal_id}")
+    assert resp.status_code == 200
+    assert resp.json() == {"report": f"This is still a placeholder report for {deal_id}."}
