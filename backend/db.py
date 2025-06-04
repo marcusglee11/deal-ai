@@ -3,7 +3,7 @@
 import os
 from sqlalchemy import create_engine, Column, Text, DateTime
 from sqlalchemy.dialects.postgresql import JSONB
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
 
