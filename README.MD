@@ -76,7 +76,7 @@ POSTGRES_PASSWORD=dealpw
 POSTGRES_DB=deals
 POSTGRES_HOST=postgres
 POSTGRES_PORT=5432
-GDRIVE_CREDENTIALS_PATH=gdrive_sa.json
+GDRIVE_CREDENTIALS_PATH=backend/gdrive_sa.json  # copy from gdrive_sa.json.example
 ```
 
 ### 3.2 Processing a Deal
