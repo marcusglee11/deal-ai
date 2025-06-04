@@ -67,6 +67,8 @@ $ curl http://127.0.0.1:8000/health   # → {"status":"ok"}
 
 ### 3.1 Environment Variables (`.env`)
 
+Copy the provided `.env.example` file and fill in your own values:
+
 ```
 OPENAI_API_KEY=sk-...
 POSTGRES_USER=deal

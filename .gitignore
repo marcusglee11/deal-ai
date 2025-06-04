@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *.env
 .env.*
+!.env.example
 backend/gdrive_sa.json
 
 # Poetry virtual environment folder
