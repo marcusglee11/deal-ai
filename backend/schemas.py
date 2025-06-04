@@ -24,9 +24,9 @@ class ParsedDocument(BaseModel):
     filename: str
     file_id: str
     text: str = ""                                 # full extracted text
-    tables: List[Dict[str, Any]] = Field(default=[])   # list of parsed tables as list-of-dicts
-    cashflow: List[CashflowEntry] = Field(default=[])
-    debt_schedule: List[DebtInstrument] = Field(default=[])
+    tables: List[Dict[str, Any]] = Field(default_factory=list)   # list of parsed tables as list-of-dicts
+    cashflow: List[CashflowEntry] = Field(default_factory=list)
+    debt_schedule: List[DebtInstrument] = Field(default_factory=list)
 
 class DealData(BaseModel):
     deal_id: str
