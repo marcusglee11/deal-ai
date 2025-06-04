@@ -40,8 +40,6 @@
 
 ## 2 Architecture
 
-![architecture diagram](docs/architecture.svg)
-
 | Layer            | Service                | Tech                             |
 | ---------------- | ---------------------- | -------------------------------- |
 | Ingestion        | Google Drive → FastAPI | `google‑api‑python‑client`       |
